@@ -7,7 +7,10 @@
 export default {
   name: "CheckCircleStatusIcon",
   props: {
-    isComplete: Boolean
+    isComplete: {
+      type: Boolean,
+      default: false
+    }
   }
 };
 </script>

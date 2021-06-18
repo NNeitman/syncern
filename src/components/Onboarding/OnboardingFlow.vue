@@ -4,9 +4,9 @@
     <div style="margin-bottom: 1em">
       <CheckCircleStatusIcon :isComplete="true"/>
       <i class="pi pi-arrow-right" style="margin: 0 10px" />
-      <CheckCircleStatusIcon :isComplete="false" />
+      <CheckCircleStatusIcon />
       <i class="pi pi-arrow-right" style="margin: 0 10px" />
-      <CheckCircleStatusIcon :isComplete="false" />
+      <CheckCircleStatusIcon />
     </div>
     <OnboardingPane
       style="min-width: 350px; margin-top: 20px; padding-bottom: 50px"
