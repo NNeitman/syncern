@@ -1,7 +1,7 @@
 <template>
   <form id="signup-form" @submit.prevent="processForm">
     <Card style="min-height: 300px">
-      <template #title> Choose Two Videos To Sync </template>
+      <template #title> Choose Videos To Syncronize</template>
       <template #content>
         <div>
           <div style="margin-top: 30px">
@@ -11,7 +11,7 @@
               url="./upload.php"
               accept="video/*"
               @upload="onUpload"
-              chooseLabel="Select Video #1"
+              chooseLabel="Choose Video #1"
             />
           </div>
           <div style="margin-top: 20px; margin-bottom: 30px">
@@ -21,7 +21,7 @@
               url="./upload.php"
               accept="video/*"
               @upload="onUpload"
-              chooseLabel="Select Video #2"
+              chooseLabel="Choose Video #2"
             />
           </div>
         </div>
