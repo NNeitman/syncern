@@ -5,24 +5,11 @@
       <template #content>
         <div>
           <div style="margin-top: 30px">
-            <FileUpload
-              mode="basic"
-              name="video1[]"
-              url="./upload.php"
-              accept="video/*"
-              @upload="onUpload"
-              chooseLabel="Choose Video #1"
-            />
+            <input type="file" id="video1" name="video1" accept="video/*" @change="setVideoFilePath"><br><br>
+            
           </div>
           <div style="margin-top: 20px; margin-bottom: 30px">
-            <FileUpload
-              mode="basic"
-              name="video2[]"
-              url="./upload.php"
-              accept="video/*"
-              @upload="onUpload"
-              chooseLabel="Choose Video #2"
-            />
+            <input type="file" id="video2" name="video2" accept="video/*" @change="setVideoFilePath"><br><br>
           </div>
         </div>
       </template>
@@ -32,8 +19,9 @@
           label="Next: Begin Syncing"
           iconPos="right"
           class="p-button-outlined p-button-secondary"
-          disabled="disabled"
           style="margin-bottom: 30px"
+          @click=onStepComplete
+          type="submit"
         />
       </template>
     </Card>
@@ -43,10 +31,27 @@
 <script>
 import Button from "primevue/button";
 import Card from "primevue/card";
-import FileUpload from "primevue/fileupload";
 export default {
   name: "OnboardingPane",
-  components: { Button, Card, FileUpload },
+  components: { Button, Card },
+  props: {
+    onStepComplete: Function,
+  },
+  data() {
+    return {
+      video1: false,
+      video2: false
+    }
+  },
+  methods: {
+    setVideoFilePath(evt, index) {
+      console.log(evt.target.value)
+      console.log(index)
+      console.log(this.video1)
+      console.log(this.video1)
+    }
+  }
+
 };
 </script>
 
